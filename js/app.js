@@ -12,3 +12,19 @@ function shuffle(array) {
 
     return array;
 }
+
+// card array
+const card = document.getElementsByClassName('card');
+let cards = [...card];
+
+// event listener for cardDisplay
+cards.forEach(function(card) {
+	card.addEventListener('click', cardDisplay);
+});
+
+function cardDisplay() {
+	// add .open, .show, .disable to display card
+	this.classList.add('open');
+	this.classList.add('show');
+	this.classList.add('disable');
+};
