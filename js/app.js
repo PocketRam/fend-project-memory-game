@@ -26,11 +26,23 @@ let cardOpen = [];
 // counters
 let count = 0
 let matchCount = 0;
+
 function moveCounter() {
 	count++;
 	document.querySelector('.moves').innerHTML= count;
-	console.log(count);
 };
+
+function stars() {
+	const displayStars = document.querySelectorAll(".stars")[0];
+	if (count === 10) {
+		displayStars.children[2].style.visibility = "hidden";
+		starRating = 2;
+		} else if (count === 18) {
+			displayStars.children[1].style.visibility = "hidden";
+			starRating = 1;
+	}
+};
+
 
 // event listener for cardDisplay
 deck.addEventListener('click', function(evt){
@@ -42,6 +54,7 @@ deck.addEventListener('click', function(evt){
 	}
 	cardDisplay(cardActive);
 	cardComparison();
+	stars();
 });
 
 function cardDisplay(cardActive) {
