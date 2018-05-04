@@ -14,7 +14,7 @@ function shuffle(array) {
 }
 
 // card array
-const card = document.getElementsByClassName('card');
+const card = document.querySelectorAll('.card');
 let cards = [...card];
 
 // deck
@@ -22,6 +22,15 @@ const deck = document.querySelector('.deck');
 
 // open cards;
 let cardOpen = [];
+
+// counters
+let count = 0
+let matchCount = 0;
+function moveCounter() {
+	count++;
+	document.querySelector('.moves').innerHTML= count;
+	console.log(count);
+};
 
 // event listener for cardDisplay
 deck.addEventListener('click', function(evt){
@@ -53,6 +62,7 @@ function cardComparison() {
 		} else {
 			noMatch();
 		}
+		moveCounter();
 		cardOpen = [];
 	}
 
@@ -73,5 +83,4 @@ function cardComparison() {
 			}, 600);
 		});
 	}
-
 };
