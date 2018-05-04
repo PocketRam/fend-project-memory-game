@@ -74,7 +74,7 @@ deck.addEventListener('click', function(evt){
 		return false;
 	} else if (evt.target.nodeName === "LI") {
 		cardActive = evt.target;
-	} else if (evt.target.nodeName === "I") {
+	} else if (evt.target.nodeName === "IMG") {
 		cardActive = evt.target.parentElement;
 	}
 	if (cardActive.classList.contains('match') === false && cardActive.classList.contains('open') === false) {
