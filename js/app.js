@@ -17,14 +17,61 @@ function shuffle(array) {
 const card = document.getElementsByClassName('card');
 let cards = [...card];
 
+// deck
+const deck = document.querySelector('.deck');
+
+// open cards;
+let cardOpen = [];
+
 // event listener for cardDisplay
-cards.forEach(function(card) {
-	card.addEventListener('click', cardDisplay);
+deck.addEventListener('click', function(evt){
+	let cardActive;
+	if (evt.target.nodeName === "UL") {
+		return false;
+	} else if (evt.target.nodeName === "LI") {
+		cardActive = evt.target;
+	}
+	cardDisplay(cardActive);
+	cardComparison();
 });
 
-function cardDisplay() {
-	// add .open, .show, .disable to display card
-	this.classList.add('open');
-	this.classList.add('show');
-	this.classList.add('disable');
+function cardDisplay(cardActive) {
+	if (cardOpen.length < 2) {
+		// push open cards to an array
+		cardOpen.push(cardActive);
+		// add .open, .show, .disable to display card
+		cardActive.classList.add('open');
+		cardActive.classList.add('show');
+	}
+};
+
+function cardComparison() {
+	// match comparison
+	if (cardOpen.length === 2) {
+		if (cardOpen[0].getAttribute('name') === cardOpen[1].getAttribute('name')) {
+			match();
+		} else {
+			noMatch();
+		}
+		cardOpen = [];
+	}
+
+	// match success
+	function match() {
+		cardOpen.forEach(function(card) {
+			card.classList.remove('open');
+			card.classList.remove('show');
+			card.classList.add('match');
+		});
+	}
+	// match fail
+	function noMatch() {
+		cardOpen.forEach(function(card) {
+			setTimeout(function() {
+				card.classList.remove('open');
+				card.classList.remove('show');
+			}, 600);
+		});
+	}
+
 };
