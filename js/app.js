@@ -27,13 +27,35 @@ let cardOpen = [];
 let count = 0
 let matchCount = 0;
 
+const displayStars = document.querySelectorAll(".stars")[0];
+
+// shuffle
+function start(){
+	var shuffledCards = shuffle(cards);
+	shuffledCards.forEach.call(shuffledCards, function(item){
+		deck.appendChild(item);
+	});
+	cards.forEach(function(card) {
+		card.classList.remove('open');
+		card.classList.remove('show');
+		card.classList.remove('match');
+	});
+	cardOpen = [];
+	count = 0;
+	matchCount = 0;
+	document.querySelector('.moves').innerHTML= count;
+	starRating = 3;
+	displayStars.children[1].style.visibility = "visible";
+	displayStars.children[2].style.visibility = "visible";
+}
+window.onload = start();
+
 function moveCounter() {
 	count++;
 	document.querySelector('.moves').innerHTML= count;
 };
 
 function stars() {
-	const displayStars = document.querySelectorAll(".stars")[0];
 	if (count === 10) {
 		displayStars.children[2].style.visibility = "hidden";
 		starRating = 2;
@@ -43,17 +65,22 @@ function stars() {
 	}
 };
 
+// event listeners
+document.querySelector('.restart').addEventListener('click', start);
 
-// event listener for cardDisplay
 deck.addEventListener('click', function(evt){
 	let cardActive;
 	if (evt.target.nodeName === "UL") {
 		return false;
 	} else if (evt.target.nodeName === "LI") {
 		cardActive = evt.target;
+	} else if (evt.target.nodeName === "I") {
+		cardActive = evt.target.parentElement;
 	}
-	cardDisplay(cardActive);
-	cardComparison();
+	if (cardActive.classList.contains('match') === false && cardActive.classList.contains('open') === false) {
+		cardDisplay(cardActive)
+		cardComparison();
+	}
 	stars();
 });
 
