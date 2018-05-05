@@ -24,7 +24,7 @@ body {
 
 .container {
     width: 700px;
-    margin: 0 auto;
+    margin: 15px auto 0;
     background: #fff;
     border: solid #3A2F33 10px;
     padding: 30px;
@@ -37,7 +37,7 @@ body {
 }
 
 #screen {
-    background: #90CDBE;
+    background: #9ECFD2;
     border-radius: 10px;
     border: solid #3A2F33 5px;
 }
@@ -54,14 +54,14 @@ header h1 {
     color: #3A2F33;
 }
 
-.button-circle {
-    margin-top: 40px;
-    font-size: 40px;
-}
-
 .camera-circle {
     margin: 0 0 20px;
     font-size: 10px;
+}
+
+.button-circle {
+    margin: 15px auto 0;
+    font-size: 40px;
 }
 
 /*
@@ -82,7 +82,7 @@ header h1 {
 .deck .card {
     height: 125px;
     width: 125px;
-    background: #D2718C;
+    background: #D0798C;
     border: solid rgba(58, 47, 51, 1) 6px;
     box-shadow: 0 15px 0 0 rgba(58, 47, 51, 1);
     color: #fff;
@@ -103,7 +103,6 @@ header h1 {
     transform: rotateY(0);
     background: #fff;
     cursor: default;
-
 }
 
 .match img, .show img {
@@ -114,19 +113,14 @@ header h1 {
 
 .deck .card.match {
     cursor: default;
-    background: #02ccba;
     font-size: 33px;
 }
 
-/*
- * Styles for the Score Panel
- */
-
-.score-panel {
-    font-size: 30px;
-    text-align: left;
+.time-panel {
+    font-size: 20px;
+    text-align: center;
     width: 100%;
-    margin: 0 20px 0 10px;
+    margin: 0 20px 10px 10px;
 }
 
 .stars {
@@ -152,28 +146,22 @@ header h1 {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 150px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */
 .modal-content {
-    background: #D9CCD0;
-    border: solid #3A2F33 10px !important;
+    background: #9ECFD2;
     padding: 30px;
-    border-radius: 40px;
-    box-shadow: 0 20px 0 0 rgba(58, 47, 51, 1);
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
-    min-width: 300px;
-    width: 40%;
+    width: 600px;
+    height: 640px;
 }
 
 .modal-content h2 {
@@ -182,7 +170,7 @@ header h1 {
 
 /* The Close Button */
 .close-modal {
-    color: #aaaaaa;
+    color: #3A2F33;
     float: right;
     font-size: 28px;
     font-weight: bold;

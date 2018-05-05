@@ -57,9 +57,28 @@ function stopTimer() {
 	clearInterval(interval);
 }
 
+// Modal
+const modal = document.querySelector('#win-modal');
+// modal moves
+const modalMoves = document.querySelector('.modal-moves');
+// close button
+const closeButton = document.querySelector('.close-modal');
+// play again button
+const playAgain = document.querySelector('#play-again');
+// close modal
+closeButton.onclick = function() {
+    modal.style.display = "none";
+};
+// close when clicked outside of modal
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+
 // star ratings
 let starRating;
-// new game
+// start
 function start(){
 	// shuffle cards
 	var shuffledCards = shuffle(cards);
@@ -83,9 +102,10 @@ function start(){
 	displayStars.children[1].style.visibility = "visible";
 	displayStars.children[2].style.visibility = "visible";
 	// reset timer
-	let timer = document.querySelector(".timer");
-	timer.innerHTML = "0 mins 0 secs";
+	let timer = document.querySelector('.timer');
+	timer.innerHTML = '0 mins 0 secs';
 	timerOn = false;
+	modal.style.display = 'none';
 }
 window.onload = start();
 
@@ -104,25 +124,6 @@ function stars() {
 	}
 }
 
-// Modal
-const modal = document.querySelector('#win-modal');
-// modal moves
-const modalMoves = document.querySelector('.modal-moves');
-// close button
-const closeButton = document.querySelector('.close-modal');
-// play again button
-const playAgain = document.querySelector('#play-again');
-// close modal
-closeButton.onclick = function() {
-    modal.style.display = "none";
-};
-// close when clicked outside of modal
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-};
-
 // win
 function win() {
 	if (matchCounter === 8) {
@@ -135,6 +136,8 @@ function win() {
 
 // -restart
 document.querySelector('.restart').addEventListener('click', start);
+document.querySelector('.play-again').addEventListener('click', start);
+
 // -card flip
 deck.addEventListener('click', function(evt){
 	let cardActive;
