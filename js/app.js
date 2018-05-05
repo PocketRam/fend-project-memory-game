@@ -1,6 +1,6 @@
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
-	var currentIndex = array.length,
+	let currentIndex = array.length,
 		temporaryValue, randomIndex;
 	while (currentIndex !== 0) {
 		randomIndex = Math.floor(Math.random() * currentIndex);
@@ -75,7 +75,7 @@ let starRating;
 // start/restart
 function start() {
 	// shuffle card elements and append them to UL
-	var shuffledCards = shuffle(cards);
+	const shuffledCards = shuffle(cards);
 	shuffledCards.forEach.call(shuffledCards, function(item) {
 		deck.appendChild(item);
 	});

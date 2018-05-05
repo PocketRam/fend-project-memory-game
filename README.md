@@ -8,9 +8,12 @@ This project was created for class with Udacity for Front-End Web Development Na
 * [Prerequisites](#prerequesites)
 * [Instructions](#instructions)
 * [Contributing](#contributing)
+* [Dependencies](#dependencies)
 
 ## Prerequisites
 
+Bootstrap's Font Awesome 4.6.1,
+Google Font's "Downing of a New Day" and "Coda" fonts
 Browser support for JavaScript ES6, HTML5, and CSS3 are required
 
 The following browsers support this app:
