@@ -61,8 +61,6 @@ const modal = document.querySelector('#win-modal');
 const modalMoves = document.querySelector('.modal-moves');
 // close button
 const closeButton = document.querySelector('.close-modal');
-// play again button
-const playAgain = document.querySelector('#play-again');
 // close modal
 closeButton.onclick = function() {
     modal.style.display = 'none';
