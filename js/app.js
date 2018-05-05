@@ -27,7 +27,7 @@ let cardOpen = [];
 let count = 0;
 let matchCounter = 0;
 
-const displayStars = document.querySelectorAll(".stars")[0];
+const displayStars = document.querySelectorAll('.stars')[0];
 
 // timer
 let second = 0,
@@ -36,17 +36,15 @@ finalSecond,
 finalMinute,
 interval,
 timerOn = false;
-const timer = document.querySelector(".timer");
+const timer = document.querySelector('.timer');
 function startTimer(){
+	second = 1;
     interval = setInterval(function(){
-        timer.innerHTML = minute+"mins "+second+"secs";
+        timer.innerHTML = minute+' mins '+second+' secs';
         second++;
         if(second == 60){
             minute++;
             second = 0;
-        }
-        if(minute == 60){
-            minute = 0;
         }
     },1000);
 }
@@ -67,12 +65,12 @@ const closeButton = document.querySelector('.close-modal');
 const playAgain = document.querySelector('#play-again');
 // close modal
 closeButton.onclick = function() {
-    modal.style.display = "none";
+    modal.style.display = 'none';
 };
 // close when clicked outside of modal
 window.onclick = function(event) {
     if (event.target == modal) {
-        modal.style.display = "none";
+        modal.style.display = 'none';
     }
 };
 
@@ -99,8 +97,8 @@ function start(){
 	document.querySelector('.moves').innerHTML= count;
 	// reset star rating
 	starRating = 3;
-	displayStars.children[1].style.visibility = "visible";
-	displayStars.children[2].style.visibility = "visible";
+	displayStars.children[1].style.visibility = 'visible';
+	displayStars.children[2].style.visibility = 'visible';
 	// reset timer
 	let timer = document.querySelector('.timer');
 	timer.innerHTML = '0 mins 0 secs';
@@ -116,10 +114,10 @@ function moveCounter() {
 
 function stars() {
 	if (count === 10) {
-		displayStars.children[2].style.visibility = "hidden";
+		displayStars.children[2].style.visibility = 'hidden';
 		starRating = 2;
 		} else if (count === 18) {
-			displayStars.children[1].style.visibility = "hidden";
+			displayStars.children[1].style.visibility = 'hidden';
 			starRating = 1;
 	}
 }
@@ -129,8 +127,11 @@ function win() {
 	if (matchCounter === 8) {
 		console.log('win!');
 		stopTimer();
-		modal.style.display = "block";
+		modal.style.display = 'block';
 		modalMoves.innerHTML = count;
+		document.querySelectorAll('.modal-time')[0].innerHTML = `Your time was ${finalMinute} min ${finalSecond} sec.`;
+		const starsEarned = document.querySelectorAll('.stars')[0].innerHTML;
+		document.querySelectorAll('.modal-stars')[0].innerHTML = starsEarned;
 	}
 }
 
@@ -142,12 +143,12 @@ document.querySelector('.play-again').addEventListener('click', start);
 deck.addEventListener('click', function(evt){
 	let cardActive;
 	// avoid active for ul elements
-	if (evt.target.nodeName === "UL") {
+	if (evt.target.nodeName === 'UL') {
 		return false;
 	// activate for li and img elements
-	} else if (evt.target.nodeName === "LI") {
+	} else if (evt.target.nodeName === 'LI') {
 		cardActive = evt.target;
-	} else if (evt.target.nodeName === "IMG") {
+	} else if (evt.target.nodeName === 'IMG') {
 		cardActive = evt.target.parentElement;
 	}
 	// doesn't contain .match AND .open
