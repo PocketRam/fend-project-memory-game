@@ -83,6 +83,8 @@ function start(){
 	shuffledCards.forEach.call(shuffledCards, function(item){
 		deck.appendChild(item);
 	});
+	// stop timer
+	stopTimer();
 	// reset flipped cards
 	cards.forEach(function(card) {
 		card.classList.remove('open');
