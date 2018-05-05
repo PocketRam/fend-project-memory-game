@@ -1,11 +1,23 @@
 # Memory Game Project
-* Created by Stephanie Lynn Rairden
-* [Original repo:](http://pocketram.com/fend-project-memory-game/)
+* Created by Stephanie Lynn Rairden [Repo:](http://pocketram.com/fend-project-memory-game/)
+
+This project was created for class with Udacity for Front-End Web Development Nanodegree.
 
 ## Table of Contents
 
+* [Prerequisites](#prerequesites)
 * [Instructions](#instructions)
 * [Contributing](#contributing)
+
+## Prerequisites
+
+Browser support for JavaScript ES6, HTML5, and CSS3 are required
+
+The following browsers support this app:
+Google Chrome,
+Microsoft Edge,
+Mozilla Firefox,
+Safari
 
 ## Instructions
 

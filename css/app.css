@@ -45,11 +45,13 @@ body {
 .camera-circle {
     margin: 0 0 20px;
     font-size: 10px;
+    color: #3a2f33;
 }
 
 .button-circle {
     margin: 15px auto 0;
     font-size: 40px;
+    color: #3a2f33;
 }
 
 

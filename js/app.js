@@ -1,35 +1,28 @@
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
-
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
-
-    return array;
+	var currentIndex = array.length,
+		temporaryValue, randomIndex;
+	while (currentIndex !== 0) {
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
+	return array;
 }
-
 // card array
 const card = document.querySelectorAll('.card');
 let cards = [...card];
-
 // deck
 const deck = document.querySelector('.deck');
-
 // open cards;
 let cardOpen = [];
-
 // counters
 let count = 0;
 let matchCounter = 0;
-
 // stars display
 const displayStars = document.querySelectorAll('.stars')[0];
-
 // timer
 const timer = document.querySelector('.timer');
 let second = 0,
@@ -38,20 +31,20 @@ let second = 0,
 	finalMinute,
 	interval,
 	timerOn = false;
-
-function startTimer(){
+// start timer
+function startTimer() {
 	second = 1;
-    interval = setInterval(function(){
-    	// update page html with timer
-        timer.innerHTML = minute+' mins '+second+' secs';
-        second++;
-        // increment minutes by 1 and reset seconds to 0
-        if(second == 60){
-            minute++;
-            second = 0;
-        }
-    // run every second
-    },1000);
+	interval = setInterval(function() {
+		// update page html with timer
+		timer.innerHTML = minute + ' mins ' + second + ' secs';
+		second++;
+		// increment minutes by 1 and reset seconds to 0
+		if (second == 60) {
+			minute++;
+			second = 0;
+		}
+		// run every second
+	}, 1000);
 }
 // stop timer
 function stopTimer() {
@@ -61,7 +54,6 @@ function stopTimer() {
 	// clears the current time
 	clearInterval(interval);
 }
-
 // Modal
 const modal = document.querySelector('#win-modal');
 // modal moves
@@ -70,23 +62,21 @@ const modalMoves = document.querySelector('.modal-moves');
 const closeButton = document.querySelector('.close-modal');
 // close modal
 closeButton.onclick = function() {
-    modal.style.display = 'none';
+	modal.style.display = 'none';
 };
 // close on click outside of modal
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
+	if (event.target == modal) {
+		modal.style.display = 'none';
+	}
 };
-
 // star ratings
 let starRating;
-
 // start/restart
-function start(){
+function start() {
 	// shuffle card elements and append them to UL
 	var shuffledCards = shuffle(cards);
-	shuffledCards.forEach.call(shuffledCards, function(item){
+	shuffledCards.forEach.call(shuffledCards, function(item) {
 		deck.appendChild(item);
 	});
 	// stop timer
@@ -103,7 +93,7 @@ function start(){
 	count = 0;
 	matchCounter = 0;
 	// reset html page count
-	document.querySelector('.moves').innerHTML= count;
+	document.querySelector('.moves').innerHTML = count;
 	// reset star rating
 	starRating = 3;
 	// reset html page star rating
@@ -120,7 +110,6 @@ function start(){
 }
 // reset and shuffle on page load
 window.onload = start();
-
 // move counter
 function moveCounter() {
 	// increment 1 move count
@@ -128,7 +117,6 @@ function moveCounter() {
 	// update the html on page for move count
 	document.querySelector('.moves').innerHTML = count;
 }
-
 // stars
 function stars() {
 	// hide the last star on page when move count is 10
@@ -137,13 +125,12 @@ function stars() {
 		// update star rating count to 2
 		starRating = 2;
 		// hide 2nd star when move count is 18
-		} else if (count === 18) {
-			displayStars.children[1].style.visibility = 'hidden';
-			// update star rating to 1
-			starRating = 1;
+	} else if (count === 18) {
+		displayStars.children[1].style.visibility = 'hidden';
+		// update star rating to 1
+		starRating = 1;
 	}
 }
-
 // win
 function win() {
 	// run at 8 matches
@@ -161,18 +148,16 @@ function win() {
 		document.querySelectorAll('.modal-stars')[0].innerHTML = starsEarned;
 	}
 }
-
 // restart and reset event listeners
 document.querySelector('.restart').addEventListener('click', start);
 document.querySelector('.play-again').addEventListener('click', start);
-
 // card handler
-deck.addEventListener('click', function(evt){
+deck.addEventListener('click', function(evt) {
 	let cardActive;
 	// avoid activating for ul elements
 	if (evt.target.nodeName === 'UL') {
 		return false;
-	// activate for li and img elements
+		// activate for li and img elements
 	} else if (evt.target.nodeName === 'LI') {
 		// if li is clicked pass li as event target
 		cardActive = evt.target;
@@ -197,7 +182,6 @@ deck.addEventListener('click', function(evt){
 	// check for win
 	win();
 });
-
 // card flip
 function cardDisplay(cardActive) {
 	if (cardOpen.length < 2) {
@@ -208,7 +192,6 @@ function cardDisplay(cardActive) {
 		cardActive.classList.add('show');
 	}
 }
-
 // match comparison
 function cardComparison() {
 	// if two cards open
@@ -224,7 +207,6 @@ function cardComparison() {
 		// reset open cards array
 		cardOpen = [];
 	}
-
 	// match success
 	function match() {
 		// remove .open, .show and add .match to open cards
