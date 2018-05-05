@@ -14,19 +14,17 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    color: #3A2F33;
+    background: #daa0b0 url("../img/ep_naturalwhite.png");
+    font-family: "Coda", cursive;
 }
 
-body {
-    background: #DAA0B0 url('../img/ep_naturalwhite.png');
-    font-family: 'Coda', cursive;
-}
 
+/* iPad/Content Container */
 .container {
     width: 700px;
     margin: 15px auto 0;
     background: #fff;
-    border: solid #3A2F33 10px;
+    border: solid #3a2f33 10px;
     padding: 30px;
     border-radius: 40px;
     box-shadow: 0 20px 0 0 rgba(58, 47, 51, 1);
@@ -37,23 +35,13 @@ body {
 }
 
 #screen {
-    background: #9ECFD2;
+    background: #9ecfd2;
     border-radius: 10px;
-    border: solid #3A2F33 5px;
+    border: solid #3a2f33 5px;
 }
 
-header h1 {
-    text-align: right;
-    margin: 0 auto;
-    padding-top: 10px;
-    margin-bottom: 20px;
-    font-family: 'Dawning of a New Day', cursive;
-    font-size: 2rem;
-    text-align: center;
-    line-height: .8;
-    color: #3A2F33;
-}
 
+/* Camera and button */
 .camera-circle {
     margin: 0 0 20px;
     font-size: 10px;
@@ -64,10 +52,22 @@ header h1 {
     font-size: 40px;
 }
 
-/*
- * Styles for the deck of cards
- */
 
+/* Header */
+header h1 {
+    text-align: right;
+    margin: 0 auto;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    font-family: "Dawning of a New Day", cursive;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 0.8;
+    color: #3a2f33;
+}
+
+
+/* Deck */
 .deck {
     width: 620px;
     min-height: 620px;
@@ -79,10 +79,11 @@ header h1 {
     padding: 0 20px;
 }
 
+/* Card */
 .deck .card {
     height: 125px;
     width: 125px;
-    background: #D0798C;
+    background: #d0798c;
     border: solid rgba(58, 47, 51, 1) 6px;
     box-shadow: 0 15px 0 0 rgba(58, 47, 51, 1);
     color: #fff;
@@ -93,29 +94,36 @@ header h1 {
     align-items: center;
 }
 
+/* Card Image */
 .deck .card img {
     opacity: 0;
     filter: alpha(opacity=0);
     border: solid rgba(58, 47, 51, 1) 6px;
 }
 
+/* Card Open */
 .deck .card.open {
-    transform: rotateY(0);
+    transform: rotatey(0);
     background: #fff;
     cursor: default;
 }
 
-.match img, .show img {
+/* Card Match and Show Image*/
+.match img,
+.show img {
     border-radius: 8px;
     opacity: 1 !important;
     filter: alpha(opacity=100);
 }
 
+/* Card Match */
 .deck .card.match {
     cursor: default;
     font-size: 33px;
 }
 
+
+/* Time Panel */
 .time-panel {
     font-size: 20px;
     text-align: center;
@@ -123,7 +131,10 @@ header h1 {
     margin: 0 20px 10px 10px;
 }
 
-.stars, .mod-stars {
+
+/* Stars */
+.stars,
+.mod-stars {
     left: 0;
     margin: 0;
     padding: 0 30px;
@@ -131,68 +142,79 @@ header h1 {
     margin: 0 5px 0 0;
 }
 
-.stars li, .mod-stars li {
+.stars li,
+.mod-stars li {
     list-style: none;
     display: inline-block;
 }
 
+
+/* Restart */
 .restart {
     float: right;
     padding-right: 20px;
     cursor: pointer;
 }
 
+
+/* Modal */
 .modal {
-    background: #9ECFD2;
-    display: none; /* Hidden by default */
-    position: absolute; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 150px; /* Location of the box */
+    background: #9ecfd2;
+    display: none; /* hidden by default */
+    position: absolute; /* stay in place */
+    z-index: 1; /* sit on top */
+    padding-top: 150px; /* location of the box */
     left: 50%;
     top: 0;
     margin-left: -300px;
     margin-top: 150px;
-    width: 600px; /* Full width */
-    height: 680px; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
+    width: 600px; /* full width */
+    height: 680px; /* full height */
+    overflow: auto; /* enable scroll if needed */
 }
 
-/* Modal Content */
+/* modal content */
 .screen-content {
     padding: 30px;
     margin: auto;
     padding: 20px;
 }
 
+/* Win Cheer */
 .screen-content h2 {
     text-align: center;
 }
 
+/* End Rating */
+/
 .rating {
     display: inline;
 }
 
-/* The Close Button */
+/* Close Button */
 .close-modal {
-    color: #3A2F33;
+    color: #3a2f33;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close-modal:hover, .close-modal:focus {
+/* Close hover */
+.close-modal:hover,
+.close-modal:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
 
+/* Restart Button */
 button.play-again {
     display: block;
     font-family: inherit;
     margin: 0 auto 20px;
     text-align: center;
-    background: #D2718C;
-    border: solid #3A2F33 6px;
+    background: #d2718c;
+    border: solid #3a2f33 6px;
     box-shadow: 0 15px 0 0 rgba(58, 47, 51, 1);
     border-radius: 10px;
     color: white;
