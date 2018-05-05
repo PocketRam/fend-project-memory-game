@@ -11,26 +11,26 @@ function shuffle(array) {
 	}
 	return array;
 }
-// card array
-const card = document.querySelectorAll('.card');
-let cards = [...card];
 // deck
-const deck = document.querySelector('.deck');
+const deck = document.querySelector('.deck'),
+// card array
+card = document.querySelectorAll('.card');
+let cards = [...card],
 // open cards;
-let cardOpen = [];
+cardOpen = [],
 // counters
-let count = 0;
-let matchCounter = 0;
+count = 0,
+matchCounter = 0;
 // stars display
-const displayStars = document.querySelectorAll('.stars')[0];
+const displayStars = document.querySelectorAll('.stars')[0],
 // timer
-const timer = document.querySelector('.timer');
+timer = document.querySelector('.timer');
 let second = 0,
-	minute = 0,
-	finalSecond,
-	finalMinute,
-	interval,
-	timerOn = false;
+minute = 0,
+finalSecond,
+finalMinute,
+interval,
+timerOn = false;
 // start timer
 function startTimer() {
 	second = 1;
@@ -55,11 +55,11 @@ function stopTimer() {
 	clearInterval(interval);
 }
 // Modal
-const modal = document.querySelector('#win-modal');
+const modal = document.querySelector('#win-modal'),
 // modal moves
-const modalMoves = document.querySelector('.modal-moves');
+	modalMoves = document.querySelector('.modal-moves'),
 // close button
-const closeButton = document.querySelector('.close-modal');
+	closeButton = document.querySelector('.close-modal');
 // close modal
 closeButton.onclick = function() {
 	modal.style.display = 'none';
@@ -196,12 +196,9 @@ function cardDisplay(cardActive) {
 function cardComparison() {
 	// if two cards open
 	if (cardOpen.length === 2) {
-		// compare open card's types
-		if (cardOpen[0].getAttribute('name') === cardOpen[1].getAttribute('name')) {
-			match();
-		} else {
-			noMatch();
-		}
+		// compare open card's image alt
+		cardOpen[0].querySelector('img').getAttribute('alt') === cardOpen[1].querySelector('img').getAttribute('alt')
+		? match() : noMatch();
 		// increment moves
 		moveCounter();
 		// reset open cards array
