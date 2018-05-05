@@ -145,7 +145,7 @@ function win() {
 		document.querySelectorAll('.modal-time')[0].innerHTML = `Your time was ${finalMinute} min ${finalSecond} sec.`;
 		// update modal html with star rating
 		const starsEarned = document.querySelectorAll('.stars')[0].innerHTML;
-		document.querySelectorAll('.modal-stars')[0].innerHTML = starsEarned;
+		document.querySelectorAll('.mod-stars')[0].innerHTML = starsEarned;
 	}
 }
 // restart and reset event listeners
