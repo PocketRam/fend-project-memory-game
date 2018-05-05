@@ -75,7 +75,7 @@ let starRating;
 // start/restart
 function start() {
 	// shuffle card elements and append them to UL
-	const shuffledCards = shuffle(cards);
+	let shuffledCards = shuffle(cards);
 	shuffledCards.forEach.call(shuffledCards, function(item) {
 		deck.appendChild(item);
 	});
