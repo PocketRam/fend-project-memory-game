@@ -176,7 +176,7 @@ header h1 {
     margin-left: -300px;
     margin-top: 150px;
     width: 600px; /* full width */
-    height: 680px; /* full height */
+    height: 650px; /* full height */
     overflow: auto; /* enable scroll if needed */
 }
 
