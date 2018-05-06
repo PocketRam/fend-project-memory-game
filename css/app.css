@@ -18,22 +18,6 @@ body {
     font-family: "Coda", cursive;
 }
 
-@media screen and (max-width: 768px) {
-    body {
-        transform: scale(.75) translate(0, -150px);
-    }
-}
-@media screen and (max-width: 640px) {
-    body {
-        transform: scale(.60) translate(-50px, -130px);
-    }
-}
-@media screen and (max-width: 360px) {
-    body {
-        transform: scale(.50) translate(-175px, -330px);
-    }
-}
-
 h3 {
     display: inline;
     padding-left: 40px;
