@@ -81,6 +81,8 @@ function start() {
 	});
 	// stop timer
 	stopTimer();
+	second = 0;
+	minute = 0;
 	// reset flipped cards by removing .open, .show, .match
 	cards.forEach(function(card) {
 		card.classList.remove('open');
